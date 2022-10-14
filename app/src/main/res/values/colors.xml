@@ -20,4 +20,10 @@
     <color name="app_secondary_color_3">#000045</color>
     <color name="app_secondary_color_4">#000019</color>
     <color name="app_bar_color">#00355E</color>
+
+    <color name="additional_color">#FF9821</color>
+    <color name="additional_color_1">#FFD19C</color>
+    <color name="additional_color_2">#FFBB6D</color>
+    <color name="additional_color_3">#FF8900</color>
+    <color name="additional_color_4">#FFAA47</color>
 </resources>
