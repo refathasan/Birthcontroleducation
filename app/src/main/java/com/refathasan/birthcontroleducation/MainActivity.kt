@@ -2,9 +2,13 @@ package com.refathasan.birthcontroleducation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -24,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         //Initialize Drawer Layout
-        drawerLayout = findViewById(R.id.drawer_layout)
+        drawerLayout = findViewById(R.id.main_drawer)
         //Initialize Navigation View
         navigationView = findViewById(R.id.navigationView)
         //Initialize Toolbar
@@ -56,9 +60,38 @@ class MainActivity : AppCompatActivity() {
          */
         toggle.syncState()
 
-        /**navigationView.setNavigationItemSelectedListener(NavigationView.OnNavigationItemSelectedListener { item ->
-            if()
+        navigationView.setNavigationItemSelectedListener(object :
+            NavigationView.OnNavigationItemSelectedListener {
+            override fun onNavigationItemSelected(item: MenuItem): Boolean {
+                //TODO("Not yet implemented")
+                when (item.itemId) {
+                    R.id.why_contra -> {
+                        load_fragment(Why_Contra_Fragment())
+                    }
+                    R.id.types_contra -> {
+                        load_fragment(Contra_types_Fragment())
+                    }
+                    R.id.male_options -> {
+                        load_fragment(Male_Otions_Fragment())
+                    }
+                    R.id.female_options -> {
+                        load_fragment(Female_Otions_Fragment())
+                    }
+                    R.id.option_statistics -> {
+                        load_fragment(Stat_Fragment())
+                    }
+                }
+                return true
             }
-        })**/
+
+        })
+    }
+
+    private fun load_fragment(fragment: Fragment) {
+///        TODO("Not yet implemented")
+        val fragmentManager: FragmentManager = supportFragmentManager
+        val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.add(R.id.container, fragment)
+        fragmentTransaction.commit()
     }
 }

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/why_contra"
+            android:icon="@drawable/contra_icon"
+            android:title="@string/why_contraceptives" />
+        <item
+            android:id="@+id/types_contra"
+            android:icon="@drawable/ic_baseline_bloodtype_24"
+            android:title="@string/contraceptives_type" />
+        <item
+            android:id="@+id/male_options"
+            android:icon="@drawable/male_option"
+            android:title="@string/male_options" />
+        <item
+            android:id="@+id/female_options"
+            android:icon="@drawable/ic_baseline_female_24"
+            android:title="@string/female_options" />
+        <item
+            android:id="@+id/option_statistics"
+            android:icon="@drawable/ic_baseline_pie_chart_24"
+            android:title="@string/statistics" />
+    </group>
+</menu>

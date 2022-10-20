@@ -16,4 +16,11 @@
     <!-- Navigation Items-->
     <string name="open">Open Navigation Drawer</string>
     <string name="close">Close Navigation Drawer</string>
+    <string name="why_contraceptives">Why Contraceptives</string>
+    <string name="contraceptives_type">Contraceptives Type</string>
+    <string name="male_options">Male Options</string>
+    <string name="female_options">Female Options</string>
+    <string name="statistics">Statistics</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
