@@ -2,9 +2,11 @@ package com.refathasan.birthcontroleducation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
+import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -60,31 +62,35 @@ class MainActivity : AppCompatActivity() {
          */
         toggle.syncState()
 
-        navigationView.setNavigationItemSelectedListener(object :
-            NavigationView.OnNavigationItemSelectedListener {
-            override fun onNavigationItemSelected(item: MenuItem): Boolean {
-                //TODO("Not yet implemented")
-                when (item.itemId) {
-                    R.id.why_contra -> {
-                        load_fragment(Why_Contra_Fragment())
-                    }
-                    R.id.types_contra -> {
-                        load_fragment(Contra_types_Fragment())
-                    }
-                    R.id.male_options -> {
-                        load_fragment(Male_Otions_Fragment())
-                    }
-                    R.id.female_options -> {
-                        load_fragment(Female_Otions_Fragment())
-                    }
-                    R.id.option_statistics -> {
-                        load_fragment(Stat_Fragment())
-                    }
+        navigationView.setNavigationItemSelectedListener { item -> //TODO("Not yet implemented")
+            when (item.itemId) {
+                R.id.why_contra -> {
+                    load_fragment(Why_Contra_Fragment())
                 }
-                return true
+                R.id.types_contra -> {
+                    load_fragment(Contra_types_Fragment())
+                }
+                R.id.male_options -> {
+                    load_fragment(Male_Otions_Fragment())
+                }
+                R.id.female_options -> {
+                    load_fragment(Female_Otions_Fragment())
+                }
+                R.id.option_statistics -> {
+                    load_fragment(Stat_Fragment())
+                }
             }
+            drawerLayout.closeDrawer(GravityCompat.START)
+            true
+        }
+    }
 
-        })
+    override fun onBackPressed() {
+        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
+            drawerLayout.closeDrawer(GravityCompat.START)
+        }else{
+            super.onBackPressed()
+        }
     }
 
     private fun load_fragment(fragment: Fragment) {
